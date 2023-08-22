@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Create daclaration
+{% endblock title %}
+
+{% block title2 %}
+    <div align="center">
+           <h3>Доска объявлений</h3>
+                <h4>OOO "MMORPG"</h4>
+            <span class="subheading">Фанатский сервис</span>
+    </div>
+{% endblock title2 %}
+
+
+
+{% block content %}
+ <h3>Добавление объявлений:</h3>
+ <form method="POST" enctype="multipart/form-data">
+     {% csrf_token %}
+     {{ form.as_div }}
+     <input class="btn btn-primary float-right" type="submit" value="Добавить объявление">
+ </form>
+ {% endblock content %}

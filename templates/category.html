@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Category
+{% endblock title %}
+
+{% block title2 %}
+<h3>{{category_name}} </h3>
+{% endblock title2 %}
+
+{% block content %}
+{% if DeclarationCategory %}
+ {% for post in category %}
+
+
+            <a href="/{{post.id}}">
+
+            <h2 class="post-title">
+              {{post.title}}
+            </h2>
+            <h3 class="post-subtitle">
+              {{post.text|truncatechars:50}}
+            </h3>
+            </a>
+
+           <p class="post-meta">Размещено на
+            <a href="/">ООО "MMORPG" сервис</a>
+             {{Dec.date_create|date:'d M Y'}}
+          </p>
+
+{% endfor %}
+{% endif %}
+{% endblock content%}

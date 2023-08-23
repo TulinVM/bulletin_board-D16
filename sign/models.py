@@ -1,9 +1,7 @@
 from django.db import models
-
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
-
 
 class RegisterUser(UserCreationForm):
     email = forms.EmailField(label='EMAIL',
@@ -30,8 +28,6 @@ class RegisterUser(UserCreationForm):
                                 widget=forms.PasswordInput(
                                     attrs={'class': 'form-control',
                                            'placeholder': 'Подтвердите пароль'}))
-
-
 
     class Meta:
         model = User

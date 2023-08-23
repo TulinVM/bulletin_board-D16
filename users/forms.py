@@ -2,7 +2,6 @@ from allauth.account.forms import LoginForm, SignupForm, BaseSignupForm
 from django import forms
 from django.forms import CharField, TextInput, PasswordInput, EmailField
 
-
 class MyLoginForm(LoginForm):
     # услевие для применения ACCOUNT_FORMS в settings
     """Переопределить форму вхожа allauth"""

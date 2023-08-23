@@ -9,11 +9,9 @@ from django.contrib.auth.models import User
 from django.core.mail import send_mail
 from bulletin_board.settings import DEFAULT_FROM_EMAIL
 from django.contrib.auth.decorators import login_required
-
 from .models import Declaration, Category, Reviews, Author
 from .filters import DaclarationFilter
 from .forms import DeclarationForm, AddReviewsForm
-
 
 class DeclarationList(ListView):
     model = Declaration
@@ -34,9 +32,7 @@ class DeclarationList(ListView):
         context['category_Tanners'] = Category.objects.get(name='Tanners').id
         context['category_Zelievars'] = Category.objects.get(name='Zelievars').id
         context['category_SpellMasters'] = Category.objects.get(name='SpellMasters').id
-
         return context
-
 
 class DeclarationCategory(DetailView):
     model = Category
@@ -49,7 +45,6 @@ class DeclarationCategory(DetailView):
         # Контекст для списка объявлений в текущей категории
         context['category'] = Declaration.objects.filter(category=id)
         context['category_name'] = Category.objects.get(pk=id)
-
         return context
 
 
@@ -64,10 +59,8 @@ class DeclarationDetail(DetailView):
         post = get_object_or_404(Declaration, id=self.kwargs.get(self.pk_url_kwarg))
         if self.request.user == post.user:
             context['author'] = True
-
         else:
             context['is_not_author'] = True
-
         return context
 
 

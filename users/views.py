@@ -7,7 +7,6 @@ from django.contrib import messages
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
 
-
 class UserPage(LoginRequiredMixin, ListView):
     model = CustomUser
     context_object_name = 'profile'

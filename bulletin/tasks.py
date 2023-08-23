@@ -7,7 +7,6 @@ from datetime import datetime, timedelta
 from .models import Declaration
 from users.models import CustomUser
 
-
 @shared_task
 def send_mail_new_response(email, username, link, content):
     html_content = render_to_string('templates/mailing/mailing_nem_response.html',
@@ -21,7 +20,6 @@ def send_mail_new_response(email, username, link, content):
     msg.send()
     print(f'Письмо отправлено {email}')
 
-
 @shared_task
 def send_mail_accept_response(email, username, link, content):
     html_content = render_to_string('templates/mailing/mailing_accept_response.html',
@@ -34,7 +32,6 @@ def send_mail_accept_response(email, username, link, content):
     msg.attach_alternative(html_content, "text/html")
     msg.send()
     print(f'Письмо отправлено {email}')
-
 
 @shared_task
 def newsletter():

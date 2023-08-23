@@ -6,7 +6,6 @@ from celery.schedules import crontab
 # связываем настройки Django с настройками Celery через переменную окружения.
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'bulletin_board.settings')
 
-
 # создаем экземпляр приложения Celery и устанавливаем для него файл конфигурации
 app = Celery('bulletin_board')
 app.config_from_object('django.conf:settings', namespace='CELERY')

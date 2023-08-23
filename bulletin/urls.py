@@ -14,5 +14,4 @@ urlpatterns = [
     path('mypage/<int:pk>', ReviewDetail.as_view(), name='review'),
     path('delete_review/<int:pk>', ReviewDelete.as_view(), name='delete_review'),
     path('addreviews/<int:pk>', user_response, name='post_response')
-
 ]

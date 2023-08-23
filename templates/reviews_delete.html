@@ -8,18 +8,14 @@ Delete
             <h3> Отклик</h3>
 {% endblock title2 %}
 
-
 {% block content %}
-
 <h1>Вы действительно хотите удалить данный отклик?</h1>
-
    <h3> Объявление:</h3>
 <h2 class="post-title">
               {{reviews.declaration}}
             </h2>
             <h3 class="post-subtitle">
              Комментарий от {{reviews.commentator}}
-
             </h3>
             <h4>Текст отклика: "{{reviews.review}}"</h4>
             <h5> Добавлено {{reviews.review_date}}</h5>

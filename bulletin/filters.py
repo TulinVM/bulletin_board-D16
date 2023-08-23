@@ -24,7 +24,6 @@ class DaclarationFilter(FilterSet):
     post_category = ModelChoiceFilter(field_name='category', queryset=Category.objects.all(),
                                       label=u'Поиск по категории',
                                       widget=Select(attrs={'placeholder': 'Поиск по категории', 'class': 'form-control'}))
-
     class Meta:
         model = Declaration
         fields = ['title', 'post_author',

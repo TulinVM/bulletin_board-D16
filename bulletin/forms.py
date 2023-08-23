@@ -1,7 +1,6 @@
 from django.forms import ModelForm, Textarea
 from .models import Declaration,Reviews
 
-
 class DeclarationForm(ModelForm):
     class Meta:
         model = Declaration
@@ -13,7 +12,6 @@ class DeclarationForm(ModelForm):
             }),
         }
 
-
 class AddReviewsForm(ModelForm):
     class Meta:
         model =Reviews
@@ -23,5 +21,4 @@ class AddReviewsForm(ModelForm):
                 'class': 'form-control',
                 'placeholder': 'Введите текст...'
             })
-
         }

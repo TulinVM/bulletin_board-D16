@@ -5,7 +5,6 @@ from .models import Declaration, Reviews
 from users.models import CustomUser
 from django.urls import reverse_lazy
 
-
 @receiver(m2m_changed, sender=Declaration.response.through)
 def notify_new_response(sender, instance, send_mail_new_response=None, **kwargs):
     """отправить письмо автору поста после отклика"""
@@ -17,7 +16,6 @@ def notify_new_response(sender, instance, send_mail_new_response=None, **kwargs)
         link = reverse_lazy('mypage')
         link = HOST + f'{link}'
         send_mail_new_response.apply_async([email, username, link, content], countdown=5)
-
 
 @receiver(m2m_changed, sender=Declaration.accepted_response.through)
 def notify_accept_response(sender, instance, send_mail_accept_response=None, **kwargs):

@@ -12,7 +12,6 @@ Category
 {% if DeclarationCategory %}
  {% for post in category %}
 
-
             <a href="/{{post.id}}">
 
             <h2 class="post-title">
@@ -27,7 +26,6 @@ Category
             <a href="/">ООО "MMORPG" сервис</a>
              {{Dec.date_create|date:'d M Y'}}
           </p>
-
 {% endfor %}
 {% endif %}
 {% endblock content%}

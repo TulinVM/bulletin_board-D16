@@ -5,7 +5,6 @@ from bulletin_board.settings import AUTH_USER_MODEL
 from django.urls import reverse
 
 
-
 class Author(models.Model):
     name = models.OneToOneField(AUTH_USER_MODEL, on_delete=models.CASCADE, unique=True, verbose_name='Автор')
 
@@ -39,7 +38,6 @@ class Category(models.Model):
                   (Tanners, 'Кожевники'),
                   (Zelievars, 'Зельевары'),
                   (SpellMasters, 'Мастера заклинаний')]
-
     name = models.CharField("Категория", max_length=25, choices=Categories, default=tanks, unique=True)
 
     def __str__(self):
